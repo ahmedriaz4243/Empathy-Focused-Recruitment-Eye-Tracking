@@ -36,6 +36,11 @@ Make sure to include all the necessary details to help users understand the proj
 
 The following data is used in this study. To utilize the dataset, simply download it and adjust the file paths according to your setup.
 
+P. Lencastre, S. Bhurtel, A. Yazidi, S. Denysov, P. G. Lind, et al. EyeT4Empathy: Dataset of foraging for visual information, gaze typing and empathy assessment. Scientific Data, 9(1):1–8, 2022
+
+[Link to the article](https://doi.org/10.1038/s41597-022-01862-w)
+
+
 <pre>
 ```bibtex
 @article{Lencastre2022,

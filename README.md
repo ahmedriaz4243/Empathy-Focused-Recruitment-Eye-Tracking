@@ -19,10 +19,10 @@ To run this project, you'll need Python 3.x and the following libraries installe
 
 Copy code
 pip install pandas numpy matplotlib seaborn scikit-learn pickle
-Project Structure
+
+* Project Structure
 The project is organized as follows:
 
-diff
 * Copy code
 - empathyhelper.py: Helper functions for data preprocessing, feature extraction, and model evaluation
 - output_data.csv: Directory containing the raw eye-tracking data files (CSV format)

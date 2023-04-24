@@ -1,11 +1,11 @@
-Project: Empathy Prediction using Eye-Tracking Data
+# Project: Empathy Prediction using Eye-Tracking Data
 
 This Python project aims to predict empathy levels in individuals based on eye-tracking data. The project utilizes machine learning techniques, including RandomForestRegressor, to build a predictive model.
 
-Getting Started
+### Getting Started
 These instructions will guide you on how to set up the project on your local machine for development and testing purposes.
 
-Prerequisites
+### Prerequisites
 To run this project, you'll need Python 3.x and the following libraries installed:
 
 pandas
@@ -42,6 +42,9 @@ For this, you have some starting code and instructions on the notebook _statisti
 
 Once you have the two functions working, go to Moodle to start the quiz for this week.
 As last week, your answers will be automatically marked.
+
+* rnn.ipynb contains the code shown in the lecture 
+* weather.csv contains the weather dataset used in the lecture
 
 Other files for this week:
 

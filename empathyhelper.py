@@ -60,13 +60,13 @@ def preprocess_data(data):
 
 
 def summarize_eye_tracking_data(data, group):
-    # Filter valid gaze data
+ 
     valid_data = data[(data['Validity left'] == 'Valid') & (data['Validity right'] == 'Valid')]
 
-    # Total fixations
+
     total_fixations = data[data['Eye movement type'] == 'Fixation'].shape[0]
 
-    # Average fixation duration
+    
     avg_fixation_duration = data[data['Eye movement type'] == 'Fixation']['Gaze event duration'].mean()
 
     # Calculate mean, median, and std of pupil diameter, Gaze point X, Gaze point Y, Fixation point X, and Fixation point Y
@@ -104,30 +104,22 @@ def uncertainty_diameters(result_I):
         
         participant_data = result_I[result_I['Participant Name'] == participant]
 
-        
         participant_data = participant_data.reset_index().rename(columns={'index': 'occurrence'}).head(6)
 
         # Group by occurrence
         grouped_data = participant_data.groupby('occurrence').agg({'Pupil Diameter Mean': 'mean', 'Pupil Diameter Median': 'mean', 'Pupil Diameter Std': 'mean'}).reset_index()
-
         
         fig, ax = plt.subplots()
-
         
         ax.errorbar(grouped_data['occurrence'], grouped_data['Pupil Diameter Mean'], grouped_data['Pupil Diameter Std'], linestyle='-', marker='o', capsize=5, ecolor="green", elinewidth=0.5, label='Mean')
 
-        
         ax.plot(grouped_data['occurrence'], grouped_data['Pupil Diameter Median'], linestyle='-', marker='s', label='Median')
-
         
         ax.set_xlabel('Occurrence')
         ax.set_ylabel('Avg Pupil Diameter (mm)')
         ax.set_title(f'Mean and Median, {participant}')
 
-        
         ax.legend()
-
-        
         plt.show()
         
         
@@ -184,14 +176,16 @@ def train_and_evalute(data_df, group_name):
     
         ###################################
         model = RandomForestRegressor()
+        
+        #model = GradientBoostingRegressor()
+        
         model.fit(X_train, y_train)
-        # Make predictions and evaluate the model
+        #Make predictions and evaluate the model
         y_pred = model.predict(X_test)
         
         ###################################### 
-    
         
-    
+      
         print(f"Fold {fold + 1}:")
     
         for idx, (original, predicted) in enumerate(zip(y_test, y_pred)):
@@ -206,8 +200,6 @@ def train_and_evalute(data_df, group_name):
         medae = median_absolute_error(y_test, y_pred)
         evs = explained_variance_score(y_test, y_pred)
     
-    
-    
         mse_scores.append(mse)
         r2_scores.append(r2)
         rt_MSE_scores.append(rt_MSE)
@@ -216,17 +208,16 @@ def train_and_evalute(data_df, group_name):
         y_pred_all.extend(y_pred)
     
 
-        # Calculate the average MSE and R2 scores
+        # Calculate the average of evaluation matrics
     avg_r2 = np.mean(r2_scores)
     avg_rt = np.mean(rt_MSE_scores)
     avg_medae = np.mean(medae_scores)
     avg_mse_scores = np.mean(mse_scores)
 
 
-    print(f"Average R2: {avg_r2}")
     print(f"Average Rt mean sqr error: {avg_rt}")
     print(f"Average Median Abs error: {avg_medae}")
-    print(f"Average Mean Squared Error: {avg_mse_scores}")  # Corrected this line
+    print(f"Average Mean Squared Error: {avg_mse_scores}") 
 
 
 
@@ -243,9 +234,37 @@ def plot_correlation_heatmap(df, target_column, top_n=15):
     cm = df[cols].corr()
 
     plt.figure(figsize=(10, 10))
-
     ax = sns.heatmap(cm, annot=True, cmap='coolwarm')
     ax.set_title('Correlation matrix for ' + target_column)
+
+    plt.show()
+    
+    return
+    
+    
+    
+def display_final_empathy_score(df):
+    results_test_mean = df.groupby('Participant Name').agg({'Original Empathy Score': 'first', 'Predicted Empathy Score': 'mean'})
+
+    pd.set_option('display.max_rows', None)
+    pd.set_option('display.max_columns', None)
+
+    print("Grouped DataFrame:")
+    print(results_test_mean)
+
+    melted_df = results_test_mean.reset_index().melt(id_vars=['Participant Name'], value_vars=['Original Empathy Score', 'Predicted Empathy Score'], var_name='Score Type', value_name='Score')
+
+    #display few
+    first_7_participants = melted_df['Participant Name'].unique()[:7]
+    filtered_df = melted_df[melted_df['Participant Name'].isin(first_7_participants)]
+
+    plt.figure(figsize=(10, 5))
+
+    sns.barplot(data=filtered_df, x='Participant Name', y='Score', hue='Score Type')
+
+    plt.title('Bar Plot of Actual and Predicted Empathy Scores for the First few Participants')
+    plt.xlabel('Participant Name')
+    plt.ylabel('Empathy Score')
 
     plt.show()
     

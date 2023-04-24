@@ -20,11 +20,12 @@ To run this project, you'll need Python 3.x and the following libraries installe
 Copy code
 pip install pandas numpy matplotlib seaborn scikit-learn pickle
 
-* Project Structure
+### Project Structure
 The project is organized as follows:
 
 * Copy code
 - empathyhelper.py: Helper functions for data preprocessing, feature extraction, and model evaluation
+- 2200482-EyeT4Empathy-Dataset.ipynb: is the ML pipeline with Exploration and Example
 - output_data.csv: Directory containing the raw eye-tracking data files (CSV format)
 * Usage
 To run the project, simply execute the main_empathy.py script. The script will preprocess the data, extract relevant features, train the RandomForestRegressor model, and evaluate the model's performance using cross-validation.

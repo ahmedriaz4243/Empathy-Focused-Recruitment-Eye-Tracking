@@ -26,7 +26,7 @@ The project is organized as follows:
 - EyeT4Empathy-Dataset.ipynb: is the ML pipeline with Exploration and Example.
 
 * Usage
-To run the project, simply execute the 2200482-EyeT4Empathy-Dataset.ipynb. This will preprocess the data, extract relevant features, train the RandomForestRegressor model, and evaluate the model's performance using cross-validation.
+To run the project, simply execute the EyeT4Empathy-Dataset.ipynb. This will preprocess the data, extract relevant features, train the RandomForestRegressor model, and evaluate the model's performance using cross-validation.
 
 Make sure to include all the necessary details to help users understand the project and its functionality.
 

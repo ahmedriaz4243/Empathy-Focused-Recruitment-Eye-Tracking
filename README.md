@@ -30,13 +30,17 @@ To run the project, simply execute the EyeT4Empathy-Dataset.ipynb. This will pre
 
 Make sure to include all the necessary details to help users understand the project and its functionality.
 
-### Dataset
+### Dataset Acknowledgements
 
 The following data is used in this study. To utilize the dataset, simply download it and adjust the file paths according to your setup.
 
-P. Lencastre, S. Bhurtel, A. Yazidi, S. Denysov, P. G. Lind, et al. EyeT4Empathy: Dataset of foraging for visual information, gaze typing and empathy assessment. Scientific Data, 9(1):1–8, 2022
+I would like to express our gratitude to the authors and contributors of the EyeT4Empathy dataset for making it publicly available. This dataset was instrumental in the development and evaluation of our work. The dataset can be found at the following link:
 
-[EyeT4Empathy: Dataset](https://doi.org/10.1038/s41597-022-01862-w)
+[EyeT4Empathy Dataset](https://doi.org/10.1038/s41597-022-01862-w)
+
+Please cite the dataset using the following reference:
+
+P. Lencastre, S. Bhurtel, A. Yazidi, S. Denysov, P. G. Lind, et al. EyeT4Empathy: Dataset of foraging for visual information, gaze typing and empathy assessment. Scientific Data, 9(1):1–8, 2022
 
 
 <pre>

@@ -23,7 +23,7 @@ pip install pandas numpy matplotlib seaborn scikit-learn pickle
 The project is organized as follows:
 
 - empathyhelper.py: Helper functions for data preprocessing, feature extraction, and model evaluation
-- EyeT4Empathy-Dataset.ipynb: is the ML pipeline with Exploration and Example.
+- EyeT4Empathy-Dataset-analysis.ipynb: is the ML pipeline with Exploration and Example.
 
 * Usage
 To run the project, simply execute the EyeT4Empathy-Dataset-analysis.ipynb. This will preprocess the data, extract relevant features, train the RandomForestRegressor model, and evaluate the model's performance using cross-validation.

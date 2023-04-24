@@ -234,23 +234,19 @@ def train_and_evalute(data_df, group_name):
 
 
 def plot_correlation_heatmap(df, target_column, top_n=15):
-    # Compute the correlation matrix for the dataframe
+    
     corr_matrix = df.corr()
 
     # Select the top_n columns with the highest correlation
     cols = corr_matrix.nlargest(top_n, target_column)[target_column].index
 
-    # Compute the correlation matrix for the selected columns
     cm = df[cols].corr()
 
-    # Set the size of the heatmap
     plt.figure(figsize=(10, 10))
 
-    # Draw the heatmap with annotations
     ax = sns.heatmap(cm, annot=True, cmap='coolwarm')
     ax.set_title('Correlation matrix for ' + target_column)
 
-    # Show the plot
     plt.show()
     
     return

@@ -34,7 +34,7 @@ Make sure to include all the necessary details to help users understand the proj
 
 The following data is used in this study. To utilize the dataset, simply download it and adjust the file paths according to your setup.
 
-I would like to express our gratitude to the authors and contributors of the EyeT4Empathy dataset for making it publicly available. This dataset was instrumental in the development and evaluation of our work. The dataset can be found at the following link:
+I would like to express my gratitude to the authors and contributors of the EyeT4Empathy dataset for making it publicly available. The dataset can be found at the following link:
 
 [EyeT4Empathy Dataset](https://doi.org/10.1038/s41597-022-01862-w)
 

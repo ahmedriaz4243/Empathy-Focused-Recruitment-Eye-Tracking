@@ -28,6 +28,8 @@ The project is organized as follows:
 - 2200482-EyeT4Empathy-Dataset.ipynb: is the ML pipeline with Exploration and Example
 - output_data.csv: Directory containing the raw eye-tracking data files (CSV format)
 * Usage
-To run the project, simply execute the main_empathy.py script. The script will preprocess the data, extract relevant features, train the RandomForestRegressor model, and evaluate the model's performance using cross-validation.
+To run the project, simply execute the 2200482-EyeT4Empathy-Dataset.ipynb. This will preprocess the data, extract relevant features, train the RandomForestRegressor model, and evaluate the model's performance using cross-validation.
 
 Make sure to include all the necessary details to help users understand the project and its functionality.
+
+### Dataset

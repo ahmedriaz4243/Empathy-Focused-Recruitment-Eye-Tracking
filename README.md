@@ -36,6 +36,8 @@ Make sure to include all the necessary details to help users understand the proj
 
 The following data is used in this study. To utilize the dataset, simply download it and adjust the file paths according to your setup.
 
+<pre>
+```bibtex
 @article{Lencastre2022,
   author = {Lencastre, Pedro and Bhurtel, Sanchita and Yazidi, Anis and et al.},
   title = {EyeT4Empathy: Dataset of foraging for visual information, gaze typing and empathy assessment},
@@ -45,3 +47,5 @@ The following data is used in this study. To utilize the dataset, simply downloa
   year = {2022},
   doi = {10.1038/s41597-022-01862-w}
 }
+```
+</pre>

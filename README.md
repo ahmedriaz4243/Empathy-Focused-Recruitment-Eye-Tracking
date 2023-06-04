@@ -1,6 +1,6 @@
 # Project: Empathy Prediction using Eye-Tracking Data
 
-This Python project aims to predict empathy levels in individuals based on eye-tracking data. The project utilizes machine learning techniques, including ####RandomForestRegressor with ####GroupKfold validation, to build a predictive model.
+This Python project aims to predict empathy levels in individuals based on eye-tracking data. The project utilizes machine learning techniques, including #### RandomForestRegressor with #### GroupKfold validation, to build a predictive model.
 
 ### Getting Started
 These instructions will guide you on how to set up the project on your local machine for development and testing purposes.
